@@ -22,9 +22,7 @@ build_ros1:
 
 build_ros2:
 	@docker buildx build \
-		--push \
 		--file Dockerfile.ros2 \
-		--platform linux/amd64,linux/arm64 \
 		--cache-from type=registry,ref=rwthika/acdc:ros2 \
 		--tag rwthika/acdc:ros2 \
 		.
