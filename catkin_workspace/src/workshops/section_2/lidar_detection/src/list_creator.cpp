@@ -100,12 +100,12 @@ namespace lidar_detection
       // START TASK 1 CODE   
       
       // set object dimensions
-      object.fMean[(int)definitions::ca_model::length] = 2;
-      object.fMean[(int)definitions::ca_model::width] = 2;
-      object.fMean[(int)definitions::ca_model::height] = 2;
+      object.fMean[(int)definitions::ca_model::length] = bounding_box.length;
+      object.fMean[(int)definitions::ca_model::width] =  bounding_box.width;
+      object.fMean[(int)definitions::ca_model::height] =  bounding_box.height;
 
       // set yaw angle
-      object.fMean[(int)definitions::ca_model::heading] = 0;
+      object.fMean[(int)definitions::ca_model::heading] = bounding_box.yaw;
 
       // END TASK 1 CODE   
 

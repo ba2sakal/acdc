@@ -195,8 +195,9 @@ namespace lidar_detection
           // set class_idx and score
           // START TASK 2 CODE   
 
-          int class_idx = -1;
-
+          // get the index of the maximum element in class_scores
+          int class_idx = std::distance(class_scores.begin(), std::max_element(class_scores.begin(), class_scores.end()));
+            
           // END TASK 2 CODE   
 
           float score = occupancy(0, x_index, y_index, anchor);

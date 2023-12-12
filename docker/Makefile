@@ -12,9 +12,7 @@ help:
 
 build_ros1:
 	@docker buildx build \
-		--push \
 		--file Dockerfile.ros1 \
-		--platform linux/amd64,linux/arm64 \
 		--cache-from type=registry,ref=rwthika/acdc:ros1 \
 		--tag rwthika/acdc:ros1 \
 		.
