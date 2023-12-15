@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>lidar_detection_r2</name>
-  <version>0.0.0</version>
+  <version>0.2.0</version>
   <description>This package runs point cloud object detection with different output formats</description>
   <maintainer email="christian.geller@ika.rwth-aachen.de">Christian Geller</maintainer>
   <license>MIT</license>
@@ -34,9 +34,6 @@
 
   <export>
     <nodelet plugin="${prefix}/nodelet_plugins.xml" />
-  </export>
-  
-  <export>
     <build_type>ament_cmake</build_type>
   </export>
 </package>
