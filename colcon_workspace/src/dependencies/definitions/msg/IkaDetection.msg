@@ -1,9 +1,9 @@
 # Meta information
-bool bStatus
-uint8 iValidLevel
+bool b_status
+uint8 i_validlevel
 
 # Actually information
-float64 fRangeRate
-float64 fRange
-float64 fAngle
-float64 fAmplitude
+float64 frange_rate
+float64 frange
+float64 fangle
+float64 famplitude

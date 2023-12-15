@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 project(definitions)
 
+
+set(CMAKE_CXX_STANDARD 17)
 find_package(ros_environment REQUIRED QUIET)
 set(ROS_VERSION $ENV{ROS_VERSION})
 add_compile_definitions(ROS_VERSION=$ENV{ROS_VERSION})
@@ -19,45 +21,39 @@ find_package(visualization_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(Eigen3 REQUIRED)
 
+find_package(rosidl_default_generators REQUIRED)
+
 
 # ROS2 message generation
 rosidl_generate_interfaces(${PROJECT_NAME}
-
+  "msg/ASNbitstring.msg"
+  "msg/IkaDetection.msg"
+  "msg/IkaDetectionList.msg"
+  "msg/IkaEgoMotion.msg"
+  "msg/IkaGPS.msg"
+  "msg/IkaObject.msg"
+  "msg/IkaObjectList.msg"
+  "msg/IkaSensorStamp.msg"
   DEPENDENCIES std_msgs geometry_msgs visualization_msgs
 )
 
 
-# Get a list of all message files in the 'msg' directory
-file(GLOB MESSAGE_FILES msg/*.msg)
-
-# ROS2 message generation
-rosidl_generate_interfaces(${PROJECT_NAME}
-  DEPENDENCIES std_msgs geometry_msgs visualization_msgs
-  FILES ${MESSAGE_FILES}
-  # OR List your message files here, e.g., "msg/YourMessage1.msg"
-)
-
-
-# Link build dependencies to the message files
-catkin_package(CATKIN_DEPENDS
-    roscpp
-    std_msgs
-    geometry_msgs
-    visualization_msgs
-    message_runtime
-    INCLUDE_DIRS
-        include
-        ${EIGEN3_INCLUDE_DIRS}
-)
-
+# Include directories
 include_directories(
   include
-  ${catkin_INCLUDE_DIRS}
-  ${Eigen3_INCLUDE_DIR}
+  ${Eigen3_INCLUDE_DIRS}
 )
 
-## Mark cpp header files for installation
-install(DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+# Install header files
+install(DIRECTORY include
+  DESTINATION include/${PROJECT_NAME}/
 )
-catkin_workspace/src/dependencies/definitions
+
+# If building with testing enabled
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+# Ament package
+ament_package()
