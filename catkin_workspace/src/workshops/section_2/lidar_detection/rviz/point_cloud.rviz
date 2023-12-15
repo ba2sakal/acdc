@@ -80,6 +80,20 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: rviz_plugin/IkaObjectList
+      Enabled: true
+      Filter Source ID: false
+      Geometric Color: 204; 51; 204
+      Name: IkaObjectList
+      Queue Size: 10
+      Show Text: true
+      Source ID: -1
+      Text Color: 204; 51; 204
+      Topic: /lidar_detection/object_list_ika
+      Unreliable: false
+      Value: true
+      Z axes shift for text.: 0
+      Z axes shift.: 0
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -108,7 +122,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 11.271666526794434
+      Distance: 26.719871520996094
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -145,4 +159,4 @@ Window Geometry:
     collapsed: false
   Width: 1636
   X: 72
-  Y: 27
+  Y: 0
