@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-humble-tf2-geometry-msgs \
     ros-humble-tf2-ros \
     ros-humble-tf2-sensor-msgs \
+    ros-humble-pcl_conversions \
     libgeographic-dev \
     && rm -rf /var/lib/apt/lists/*
 

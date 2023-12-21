@@ -11,9 +11,9 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   
-  <!-- catkin package dependencies -->
+  <!-- colcon package dependencies -->
   <depend>cv_bridge</depend>
-  <depend>rospy</depend>
+  <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
 
